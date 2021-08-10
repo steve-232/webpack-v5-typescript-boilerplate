@@ -30,6 +30,7 @@
     "@babel/preset-env": "^7.13.15",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.0",
+    "dotenv-webpack": "^7.0.3",
     "mini-css-extract-plugin": "^1.4.1",
     "normalize.css": "^8.0.1",
     "postcss": "^8.2.10",
