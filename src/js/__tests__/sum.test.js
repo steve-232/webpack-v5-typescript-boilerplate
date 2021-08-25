@@ -1,4 +1,4 @@
-import sum from '../sum';
+import sum from '../sum.ts';
 
 describe('sum', () => {
   test('sum two numbers', () => {
