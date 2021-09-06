@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.ts',
   output: {
     filename: 'js/main.js',
     path: path.resolve(__dirname, 'dist'),
@@ -30,6 +31,7 @@ module.exports = {
                 esmodules: true,
               },
             }]],
+            // eslint-disable-next-line max-len
             plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/plugin-proposal-class-properties'],
           },
         },

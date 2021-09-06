@@ -8,8 +8,6 @@ const inputNum2 = document.querySelector('.num-2') as HTMLInputElement;
 const getTheSumBtn = document.querySelector('.get-the-sum') as HTMLButtonElement;
 const finalNum = document.querySelector('span') as HTMLSpanElement;
 
-console.log('aaaaaaaaaaaa')
-
 getTheSumBtn.addEventListener('click', () => {
   const res = sum(Number(inputNum1.value), Number(inputNum2.value));
   if (Number.isNaN(res)) {
