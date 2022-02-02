@@ -1,18 +1,24 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/index.ts',
   output: {
-    filename: 'static/js/main.js',
+    filename: 'static/js/[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
   plugins: [
     new Dotenv(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'templates/index.html',
+    }),
     new MiniCssExtractPlugin({
-      filename: 'static/css/main.css',
+      filename: 'static/css/[name].[contenthash].css',
     }),
   ],
   resolve: {
