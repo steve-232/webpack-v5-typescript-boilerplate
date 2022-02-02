@@ -6,13 +6,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: './src/index.ts',
   output: {
-    filename: 'js/main.js',
+    filename: 'static/js/main.js',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
     new Dotenv(),
     new MiniCssExtractPlugin({
-      filename: 'css/main.css',
+      filename: 'static/css/main.css',
     }),
   ],
   resolve: {
@@ -45,14 +45,14 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/[hash][ext][query]',
+          filename: 'static/imgs/assets/[hash][ext][query]',
         },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/[hash][ext][query]',
+          filename: 'static/fonts/[hash][ext][query]',
         },
       },
     ],
