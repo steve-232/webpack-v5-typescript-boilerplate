@@ -1,8 +1,9 @@
 {
-  "name": "static-website-webpack-config",
-  "version": "1.0.0",
-  "description": "Webpack configuration for the Static/Classic Websites",
-  "main": "index.js",
+  "name": "webpack-v5-typescript-boilerplate",
+  "version": "2.0.0",
+  "description": "Webpack v5 TypeScript Boilerplate",
+  "homepage": "https://github.com/steve-232/webpack-v5-typescript-boilerplate",
+  "main": "index.ts",
   "scripts": {
     "dev": "webpack serve --config webpack.dev.js",
     "prod": "webpack --config webpack.prod.js",
@@ -10,6 +11,11 @@
     "eslint": "eslint src/ --ext .js,.ts",
     "prepare": "husky install"
   },
+  "keywords": [
+    "webpack",
+    "typescript",
+    "boilerplate"
+  ],
   "author": {
     "name": "steve-232",
     "email": "steve232np@gmail.com"
