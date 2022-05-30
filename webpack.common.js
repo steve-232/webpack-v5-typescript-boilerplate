@@ -1,17 +1,24 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.ts',
   output: {
-    filename: 'js/main.js',
+    filename: 'static/js/[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
   plugins: [
     new Dotenv(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'templates/index.html',
+    }),
     new MiniCssExtractPlugin({
-      filename: 'css/main.css',
+      filename: 'static/css/[name].[contenthash].css',
     }),
   ],
   resolve: {
@@ -30,6 +37,7 @@ module.exports = {
                 esmodules: true,
               },
             }]],
+            // eslint-disable-next-line max-len
             plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/plugin-proposal-class-properties'],
           },
         },
@@ -43,14 +51,14 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/[hash][ext][query]',
+          filename: 'static/imgs/assets/[hash][ext][query]',
         },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/[hash][ext][query]',
+          filename: 'static/fonts/[hash][ext][query]',
         },
       },
     ],

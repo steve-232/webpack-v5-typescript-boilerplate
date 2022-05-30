@@ -1,15 +1,21 @@
 {
-  "name": "static-website-webpack-config",
-  "version": "1.0.0",
-  "description": "Webpack configuration for the Static/Classic Websites",
-  "main": "index.js",
+  "name": "webpack-v5-typescript-boilerplate",
+  "version": "2.0.0",
+  "description": "Webpack v5 TypeScript Boilerplate",
+  "homepage": "https://github.com/steve-232/webpack-v5-typescript-boilerplate",
+  "main": "index.ts",
   "scripts": {
     "dev": "webpack serve --config webpack.dev.js",
     "prod": "webpack --config webpack.prod.js",
     "test": "jest src/",
-    "eslint": "eslint src/",
+    "eslint": "eslint src/ --ext .js,.ts",
     "prepare": "husky install"
   },
+  "keywords": [
+    "webpack",
+    "typescript",
+    "boilerplate"
+  ],
   "author": {
     "name": "steve-232",
     "email": "steve232np@gmail.com"
@@ -17,18 +23,24 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.13.16",
+    "@babel/preset-typescript": "^7.15.0",
+    "@types/jest": "^27.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
     "autoprefixer": "^9.8.6",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.25.0",
     "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-airbnb-typescript": "^14.0.0",
     "eslint-plugin-import": "^2.22.1",
     "husky": "^7.0.1",
     "jest": "^27.0.6",
     "style-loader": "^2.0.0",
+    "ts-jest": "^27.0.5",
     "ts-loader": "^9.2.3",
     "typescript": "^4.3.4",
     "webpack": "^5.31.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^4.9.0"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.13.0",
@@ -38,6 +50,7 @@
     "css-loader": "^5.2.0",
     "dotenv-webpack": "^7.0.3",
     "eslint-plugin-jest": "^24.4.0",
+    "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^1.4.1",
     "normalize.css": "^8.0.1",
     "postcss": "^8.2.10",
